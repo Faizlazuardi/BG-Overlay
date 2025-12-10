@@ -9,7 +9,7 @@ export default function PlayerDisplay({ grid }){
     
     const renderPlayers = (player, highlight) => {
         return Array.from({ length: TEAM_SIZE }).map((_, index) => (
-            <div className={`flex justify-center items-center h-8 w-29 text-white ${highlight[index] ? 'bg-[#289132]' : 'bg-[#00C92A]'}`} key={index}>
+            <div className={`flex justify-center items-center h-8 w-29 text-white ${highlight[index] ? 'bg-[#D86E37]' : 'bg-[#063C54]'}`} key={index}>
                 {player[index]}
             </div>
         ));

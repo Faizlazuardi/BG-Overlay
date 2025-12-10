@@ -1,7 +1,5 @@
-import { Ban } from 'lucide-react';
-
+import { X } from 'lucide-react';
 import { useGameContext } from '../../../contexts/GameContext';
-
 import { useDraftContext } from '../../../contexts/DraftContext';
 
 export default function ban({ grid }) {
@@ -13,8 +11,8 @@ export default function ban({ grid }) {
     const renderBans = (bans, animationClass) => {
         return Array.from({ length: selectedTotalBan }).map((_, index) => (
             <div className="flex justify-center items-center bg-black bg-cover bg-center w-16 h-16 overflow-hidden" key={index}>
+                <X className="absolute w-15 h-15 text-[#FECA4E]"/>
                 <img className={`grayscale-100 h-full object-cover ${animationClass[index]}`} src={bans[index].img} alt=""/>
-                <Ban className="absolute w-15 h-15 text-[#FF0000]"/>
             </div>
         ))
     }

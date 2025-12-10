@@ -1,6 +1,6 @@
 import { TEAM_SIZE } from '../../../constants/gameConstant';
-
 import { useDraftContext } from '../../../contexts/DraftContext';
+import TournamentLogo from '/src/assets/TournamentLogo.png'
 
 export default function PickDisplay({ grid }) {
     const { pickSelection, animationClasses:{pick: animationClasses}} = useDraftContext()
@@ -9,8 +9,11 @@ export default function PickDisplay({ grid }) {
     
     const renderPicks = (picks, animationClass) => {
         return Array.from({ length: TEAM_SIZE }).map((_, index) => (
-            <div className="bg-[url('/images/BackroundPick.png')] bg-cover bg-center w-29 h-45 overflow-hidden" key={index}>
-                <img className={`w-full object-cover ${animationClass[index]}`} src={picks[index].img} alt="" />
+            <div className="bg-center w-29 h-45" key={index}>
+                <div className="absolute flex items-center bg-[linear-gradient(180deg,#5170FF_0%,#5170FF_28%,#191931_100%)] border w-29 h-45">
+                    <img src={TournamentLogo} alt="" className="top-1/2 w-29 h-fit"/>
+                </div>
+                <img className={`relative w-full object-cover ${animationClass[index]}`} src={picks[index].img} alt="" />
             </div>
         ));
     };
